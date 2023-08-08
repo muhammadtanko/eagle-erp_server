@@ -16,6 +16,14 @@ export interface IStaff extends Document {
     dateOfEngagement: Date,
 
 }
+// type Staff={
+//     id: string,
+//     firstName: string,
+//     middleName: string,
+//     lastName: string,
+//     biodata: Biodata,
+//     dateOfEngagement: Date,
+// }
 const StaffSchema: Schema = new Schema<IStaff>({
     id: { type: String, unique: true },
     firstName: { type: String},
@@ -28,3 +36,4 @@ const StaffSchema: Schema = new Schema<IStaff>({
     dateOfEngagement: { type: Date }
 })
 export const StaffModel = model<IStaff>("Staff", StaffSchema);
+// export default Staff;
