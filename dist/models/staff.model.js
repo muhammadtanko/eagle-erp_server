@@ -19,4 +19,5 @@ const StaffSchema = new mongoose_1.Schema({
     dateOfEngagement: { type: Date }
 });
 exports.StaffModel = (0, mongoose_1.model)("Staff", StaffSchema);
+// export default Staff;
 //# sourceMappingURL=staff.model.js.map

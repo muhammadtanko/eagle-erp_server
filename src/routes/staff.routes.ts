@@ -33,7 +33,7 @@ export default (): Router => {
     api.post("/", async (req: Request, res: Response) => {
         try {
             let data = req.body;
-            let newStaff = staffControllers.registerStaff(data)
+            let newStaff = await staffControllers.registerStaff(data)
             res.status(200).json({ ok: true, payload: newStaff })
         } catch (error: any) {
             res.status(200).json({ ok: false, payload: error.message });
@@ -43,17 +43,11 @@ export default (): Router => {
         try {
             let id: string = req.params.id;
             let deletedStaff = await staffControllers.deleteStaff(id);
-            res.status(200).json({ ok: true, payload: `user with ${deletedStaff?.id} has been deleted` })
+            res.status(200).json({ ok: true, payload: `user with id ${deletedStaff?.id} has been deleted` })
         } catch (error: any) {
             res.status(500).json({ ok: false, error: error.message })
         }
 
     })
-
-
-
-
-
-
     return api;
 }

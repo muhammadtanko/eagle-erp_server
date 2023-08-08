@@ -6,7 +6,7 @@ class StaffController {
     async registerStaff(data: IStaff) {
         let staff = new StaffModel(data);
         let result = await staff.save();
-        return result
+        return result;
     }
 
     async getStaff(id: string) {
@@ -24,7 +24,7 @@ class StaffController {
         return staff
     }
 
-    async deleteStaff(id: string){
+    async deleteStaff(id: string) {
         let staff = await StaffModel.findByIdAndDelete(id);
         return staff
     }
